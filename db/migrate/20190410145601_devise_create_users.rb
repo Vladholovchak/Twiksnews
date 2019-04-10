@@ -10,7 +10,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       ## Name and Role
       t.string :first_name, null: false, default: ""
       t.string :first_name, null: false, default: ""
-      t.integer :role, null false, default: 0
+      t.integer :role, null: false, default: 0
 
       ## Recoverable
      # t.string   :reset_password_token
@@ -42,7 +42,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
     end
 
     add_index :users, :email,                unique: true
-    add_index :users, :reset_password_token, unique: true
+    # add_index :users, :reset_password_token, unique: true
     # add_index :users, :confirmation_token,   unique: true
     # add_index :users, :unlock_token,         unique: true
   end
