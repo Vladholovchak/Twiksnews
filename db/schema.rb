@@ -16,16 +16,16 @@ ActiveRecord::Schema.define(version: 2019_04_12_205757) do
   enable_extension "plpgsql"
 
   create_table "articles", force: :cascade do |t|
-    t.bigint "sourse_id"
+    t.bigint "source_id"
     t.string "title", default: "", null: false
     t.string "description", default: "", null: false
     t.string "url", default: "", null: false
     t.string "url_to_image", default: "", null: false
-    t.datetime "published_at"
+    t.datetime "published_at", default: "2019-04-12 23:21:06", null: false
     t.string "content", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["sourse_id"], name: "index_articles_on_sourse_id"
+    t.index ["source_id"], name: "index_articles_on_source_id"
   end
 
   create_table "sources", force: :cascade do |t|
@@ -48,11 +48,10 @@ ActiveRecord::Schema.define(version: 2019_04_12_205757) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "first_name", default: "", null: false
+    t.string "last_name", default: "", null: false
     t.integer "role", default: 0, null: false
-    t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end

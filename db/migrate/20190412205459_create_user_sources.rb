@@ -1,6 +1,6 @@
 class CreateUserSources < ActiveRecord::Migration[5.2]
   def change
-    create_table :user_sources do |t|
+    create_table :user_sources do   |t|
       t.belongs_to :user
       t.belongs_to :source
       t.timestamps
