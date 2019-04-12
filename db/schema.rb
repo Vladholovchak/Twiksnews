@@ -10,10 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_10_145601) do
+ActiveRecord::Schema.define(version: 2019_04_12_205757) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "articles", force: :cascade do |t|
+    t.bigint "sourse_id"
+    t.string "title", default: "", null: false
+    t.string "description", default: "", null: false
+    t.string "url", default: "", null: false
+    t.string "url_to_image", default: "", null: false
+    t.datetime "published_at"
+    t.string "content", default: "", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sourse_id"], name: "index_articles_on_sourse_id"
+  end
+
+  create_table "sources", force: :cascade do |t|
+    t.string "google_id", default: "", null: false
+    t.string "name", default: "", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_sources", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "source_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["source_id"], name: "index_user_sources_on_source_id"
+    t.index ["user_id"], name: "index_user_sources_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
