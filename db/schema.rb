@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2019_04_12_205757) do
     t.string "description", default: "", null: false
     t.string "url", default: "", null: false
     t.string "url_to_image", default: "", null: false
-    t.datetime "published_at", default: "2019-04-13 11:51:19", null: false
+    t.datetime "published_at", default: "2019-04-13 17:48:19", null: false
     t.string "content", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2019_04_12_205757) do
     t.integer "role", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end
