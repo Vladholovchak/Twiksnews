@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2019_04_12_205757) do
     t.string "description", default: "", null: false
     t.string "url", default: "", null: false
     t.string "url_to_image", default: "", null: false
-    t.datetime "published_at", default: "2019-04-12 23:21:06", null: false
+    t.datetime "published_at", default: "2019-04-13 11:51:19", null: false
     t.string "content", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
