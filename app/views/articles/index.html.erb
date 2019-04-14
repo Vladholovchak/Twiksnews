@@ -1,0 +1,17 @@
+<h2>News</h2>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>published_at</th>
+    <th colspan="10"></th>
+    <th colspan="10"></th>
+  </tr>
+    <tr>
+      <% @articles.each do |article| %>
+      <td><%= article.title %></td>
+      <td><%= article.description %></td>
+      <td><%= article.published_at %></td>
+    </tr>
+      <%end %>
+      </table>
