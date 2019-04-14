@@ -18,19 +18,19 @@ ActiveRecord::Schema.define(version: 2019_04_12_205757) do
   create_table "articles", force: :cascade do |t|
     t.bigint "source_id"
     t.string "title", default: "", null: false
-    t.string "description", default: "", null: false
-    t.string "url", default: "", null: false
-    t.string "url_to_image", default: "", null: false
+    t.string "description", default: ""
+    t.string "url", default: ""
+    t.string "url_to_image", default: ""
     t.datetime "published_at", default: "2019-04-13 17:48:19", null: false
-    t.string "content", default: "", null: false
+    t.string "content", default: ""
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["source_id"], name: "index_articles_on_source_id"
   end
 
   create_table "sources", force: :cascade do |t|
-    t.string "google_id", default: "", null: false
-    t.string "name", default: "", null: false
+    t.string "google_id", default: ""
+    t.string "name", default: ""
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

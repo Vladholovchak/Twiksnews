@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
 class Article < ApplicationRecord
-  validates :title, :url, :content, presence: true
+  validates :title, uniqueness: true
   belongs_to :source
 end
