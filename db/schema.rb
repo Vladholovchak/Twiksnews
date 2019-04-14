@@ -31,15 +31,14 @@ ActiveRecord::Schema.define(version: 2019_04_12_205757) do
   create_table "sources", force: :cascade do |t|
     t.string "google_id", default: ""
     t.string "name", default: ""
+    t.integer "total", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_sources", force: :cascade do |t|
+  create_table "user_sources", id: false, force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "source_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.index ["source_id"], name: "index_user_sources_on_source_id"
     t.index ["user_id"], name: "index_user_sources_on_user_id"
   end
