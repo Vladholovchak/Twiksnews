@@ -1,0 +1,20 @@
+<h2>Sources</h2>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th colspan="10"></th>
+    <th colspan="10"></th>
+  </tr>
+
+  <tr>
+    <%  @sources.each do |source| %>
+      <td><%= source.google_id %></td>
+      <td><%= source.name %></td>
+      </tr>
+    <%end %>
+
+    </table>
+<!– –
+<% # will_paginate @sources %>
+– –>

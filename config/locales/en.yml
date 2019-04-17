@@ -30,4 +30,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  pundit:
+    default: 'You cannot perform this action.'
+    article_policy:
+      update?: 'You cannot edit this articles!'
+      create?: 'You cannot create articles!'
+      edit?: 'You cannot edit articles!'
+      destroy?: 'You cannot delete articles!'

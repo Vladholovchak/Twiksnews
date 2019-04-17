@@ -1,0 +1,38 @@
+<%= form_with model: @article, local: true do |form| %>
+
+  <% if @article.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@article.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @article.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= form.label :source_id %><br>
+    <%= form.collection_select(:source_id, Source.all, :id, :name) %>
+  </p>
+  <%= form.label :title %><br>
+  <%= form.text_field :title %>
+  </p>
+  <%= form.label :description %><br>
+  <%= form.text_field :description %>
+  <p>
+    <%= form.label :url %><br>
+    <%= form.text_area :url %>
+  </p>
+  <%= form.label :url_to_image %><br>
+  <%= form.text_field :url_to_image %>
+  <p>
+    <%= form.label :published_at %><br>
+    <%= form.date_field :published_at %>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

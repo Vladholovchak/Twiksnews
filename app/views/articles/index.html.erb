@@ -1,4 +1,5 @@
-<h2>News</h2>
+<h2>News</h2>  <%= link_to 'My Articles'  %>
+
 <table>
   <tr>
     <th>Title</th>
@@ -7,11 +8,20 @@
     <th colspan="10"></th>
     <th colspan="10"></th>
   </tr>
-    <tr>
-      <% @articles.each do |article| %>
+
+  <tr>
+    <%  @articles.each do |article| %>
       <td><%= article.title %></td>
       <td><%= article.description %></td>
       <td><%= article.published_at %></td>
+      <td><%= link_to 'Show', article_path(article) %></td>
+      <td> <%= link_to 'Edit', edit_article_path(article) %></td>
+      <td><%= link_to 'Destroy', article_path(article),
+                      method: :delete,
+                      data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <%end %>
     </tr>
-      <%end %>
+
       </table>
+<%= will_paginate @articles %>
