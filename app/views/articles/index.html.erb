@@ -1,17 +1,14 @@
-<h2>News</h2>
-<div class="container">
-  <main role="main" class="container">
-    <div class="row">
+<div class="row">
       <div class = 'col-md-8 blog-main'>
         <div class="blog-post">
        <%  @articles.each do |article| %>
-      <h3 class="blog-post-title"><%= article.title %> </h3>
+      <h4 class="blog-post-title">
+        <%= link_to "#{article.title}", article_path(article), class: 'navbar-brand' %> </h4>
             <p class="blog-post-meta"><%= article.published_at %> from
             <a href="<%= article.url %>"> <%= article.source.name %>  </a>
             </p>
             <hr>
             <p><%= article.description %> </p>
-            <%= link_to 'Show', article_path(article) %>
       <%= link_to 'Edit', edit_article_path(article) %>
       <%= link_to 'Destroy', article_path(article),
                       method: :delete,
@@ -27,6 +24,4 @@
         </div>
         </div>
       </div>
-  </main>
-</div>
 
