@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
     @articles = authorize Article.all
     @articles = current_user.articles if current_user.present?
     @articles = @articles.order(published_at: :desc)
-    @articles = @articles.paginate(:page => params[:page],:per_page => 8)
+    @articles = @articles.paginate(:page => params[:page],:per_page => 5)
   end
 
   def show

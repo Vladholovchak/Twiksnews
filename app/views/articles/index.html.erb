@@ -1,7 +1,8 @@
-<h2>News</h2>  <%= link_to 'My Articles'  %>
+<h2>News</h2>
 
 <table>
   <tr>
+    <th>Source</th>
     <th>Title</th>
     <th>Description</th>
     <th>published_at</th>
@@ -11,6 +12,7 @@
 
   <tr>
     <%  @articles.each do |article| %>
+      <td><%= article.source.name %></td>
       <td><%= article.title %></td>
       <td><%= article.description %></td>
       <td><%= article.published_at %></td>

@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_admin
 
+
   def index
     @users = User.all
   end
@@ -9,9 +10,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def update
-    User.find(params[:id]).update(user_params)
-  end
+#  def update
+  #  User.find(params[:id]).update(user_params)
+#  end
 
   private
 
@@ -23,8 +24,8 @@ class UsersController < ApplicationController
     redirect_to root_path, alert: 'Not authorized.' unless current_user && access_whitelist
   end
 
-  def user_params
-    params.require(:user).permit(source_ids:[])
-  end
+ # def user_params
+ #   params.require(:user).permit(source_ids:[])
+ # end
 
 end
