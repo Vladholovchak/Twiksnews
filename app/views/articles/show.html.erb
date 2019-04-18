@@ -11,5 +11,6 @@
   <strong>Source:</strong>
 <td><%= @article.source.name %></td>
 </p>
+<p><%= image_tag @article.url_to_image, size: '500x300'unless @article.url_to_image.blank? %> </p>
 <%= link_to 'Edit', edit_article_path(@article) %>
 <%= link_to 'Back', articles_path %>
