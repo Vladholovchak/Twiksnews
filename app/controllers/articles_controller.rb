@@ -12,19 +12,22 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    authorize(@article)
+    authorize @article
   end
 
   def new
-    @article = authorize Article.new
+    @article = Article.new
+    authorize @article
   end
 
   def edit
-    @article = authorize Article.find(params[:id])
+    @article = Article.find(params[:id])
+    authorize @article
   end
 
   def create
-    @article = authorize Article.new(article_params)
+    @article = Article.new(article_params)
+    authorize @article
     if @article.save
       redirect_to @article
     else
@@ -33,7 +36,8 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    @article = authorize Article.find(params[:id])
+    @article = Article.find(params[:id])
+    authorize @article
     if @article.update(article_params)
       redirect_to @article
     else
@@ -42,7 +46,8 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article = authorize Article.find(params[:id])
+    @article = Article.find(params[:id])
+    authorize @article
     @article.destroy
     redirect_to articles_path
   end

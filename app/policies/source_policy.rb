@@ -1,27 +1,30 @@
-def index?
-  false
-end
+class SourcePolicy < ApplicationPolicy
 
-def show?
-  false
-end
+  def index?
+    admin_user?
+  end
 
-def create?
-  false
-end
+  def show?
+    admin_user?
+  end
 
-def new?
-  create?
-end
+  def create?
+    admin_user?
+  end
 
-def update?
-  false
-end
+  def new?
+    create?
+  end
 
-def edit?
-  update?
-end
+  def update?
+    admin_user?
+  end
 
-def destroy?
-  false
+  def edit?
+    update?
+  end
+
+  def destroy?
+    admin_user?
+  end
 end
