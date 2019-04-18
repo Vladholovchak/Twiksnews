@@ -2,6 +2,12 @@
   <li>
     <%= link_to('Edit registration', edit_user_registration_path) %>
   </li>
+  <li>
+    <%= link_to('update_news', news_fetchers_fetch_news_path ) %>
+  </li>
+  <li>
+    <%= link_to('update_sources', news_fetchers_fetch_sources_path ) %>
+  </li>
 <% else %>
   <li>
     <%= link_to('Register', new_user_registration_path)  %>

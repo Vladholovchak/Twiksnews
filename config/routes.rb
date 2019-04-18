@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   resources :sources
   resources :articles
   root to: 'articles#index'
-
+  get 'news_fetchers/fetch_news', to:  'news_fetchers#fetch_news'
+  get 'news_fetchers/fetch_sources', to:  'news_fetchers#fetch_sources'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 end

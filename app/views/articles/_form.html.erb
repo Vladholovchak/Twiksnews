@@ -1,4 +1,4 @@
-<%= form_with model: @article, local: true do |form| %>
+<%= form_with model: @article, local: true, remote:true do |form| %>
 
   <% if @article.errors.any? %>
     <div id="error_explanation">
@@ -15,7 +15,7 @@
   <% end %>
 
   <p>
-    <%= form.label :source_id %><br>
+    <%= form.label :Source %><br>
     <%= form.collection_select(:source_id, Source.all, :id, :name) %>
   </p>
   <%= form.label :title %><br>

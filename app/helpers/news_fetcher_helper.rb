@@ -1,0 +1,2 @@
+module NewsFetcherHelper
+end
