@@ -17,11 +17,11 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def update?
-    admin_user?
+    admin_user? or redactor_user?
   end
 
   def edit?
-    admin_user?
+    update?
   end
 
   def destroy?

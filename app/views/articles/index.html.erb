@@ -10,21 +10,20 @@
             <hr>
             <p><%= article.description %> </p>
             <p><%= link_to (image_tag article.url_to_image, size: '500x300') ,article_path(article)  unless article.url_to_image.blank? %> </p>
-
+            <% if policy(@articles).update? %>
       <%= link_to 'Edit', edit_article_path(article) %>
+            <%end %>
+              <% if policy(@articles).destroy? %>
       <%= link_to 'Destroy', article_path(article),
                       method: :delete,
                       data: { confirm: 'Are you sure?' } %>
-            <p></p>
+            <%end %>
     <%end %>
       </div>
-
-
           <div class="page_info">
             <%= page_entries_info @articles %>
           </div>
            <%= will_paginate @articles, :container => false  %>
-
         </div>
       </div>
 

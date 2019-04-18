@@ -1,11 +1,9 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  enum role: [:user, :admin]
-  # Include default devise modules. Others available are:
+  enum role: [:user, :admin, :redactor]
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable, #:recoverable, :rememberable
   devise :database_authenticatable, :registerable, :validatable
-  #validates :password, length: { minimum: 8 }
   # validates :first_name, :last_name, name: true, presence: true
   validates :email, uniqueness: true
   validates_with EmailAddressValidator, fields: [:email]

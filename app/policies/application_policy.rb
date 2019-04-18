@@ -40,6 +40,10 @@ class ApplicationPolicy
      user.present? && user.admin?
    end
 
+  def redactor_user?
+    user.present? && user.redactor?
+  end
+
   class Scope
     attr_reader :user, :scope
 

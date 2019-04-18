@@ -6,12 +6,12 @@
 <% if user_signed_in? %>
 
        <%= link_to('Edit registration', edit_user_registration_path, class:"btn btn-sm btn-outline-secondary") %>
-
+    <% if policy(Source).update? %>
     <%= link_to('Update News', news_fetchers_fetch_news_path,  class:"btn btn-sm btn-outline-secondary" ) %>
 
 
     <%= link_to('Update sources', news_fetchers_fetch_sources_path,  class:"btn btn-sm btn-outline-secondary" ) %>
-
+  <% end %>
 <% else %>
 
     <%= link_to('Register', new_user_registration_path,class:"btn btn-sm btn-outline-secondary") %>
