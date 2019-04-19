@@ -1,6 +1,5 @@
 class NewsFetchersController < ApplicationController
 
-
   def fetch_news
     authorize User
     FetchArticlesService.new.create_articles

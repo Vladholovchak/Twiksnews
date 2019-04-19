@@ -2,8 +2,6 @@
 
 class FetchArticlesService
 
-
-
   def call
     @api_key = '882e10dd2b474a23bb7a3efa85e66b61'
     @newsapi = News.new(@api_key)

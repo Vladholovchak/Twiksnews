@@ -24,7 +24,7 @@
             <%= page_entries_info @articles %>
           </div>
 
-           <%= will_paginate @articles, renderer: BootstrapPagination::Rails  %>
+           <%= will_paginate @articles, renderer: WillPaginate::ActionView::BootstrapLinkRenderer , list_classes: %w(pagination justify-content-end) %>
         </div>
       </div>
 

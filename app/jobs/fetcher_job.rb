@@ -9,7 +9,7 @@ class FetcherJob < ApplicationJob
   private
 
   def set_schedule
-    FetcherJob.set(wait: 1.minute).perform_later
+    FetcherJob.set(wait: 1.hour).perform_later
   end
 
 end
