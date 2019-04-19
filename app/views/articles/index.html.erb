@@ -23,7 +23,8 @@
           <div class="page_info">
             <%= page_entries_info @articles %>
           </div>
-           <%= will_paginate @articles, :container => false  %>
+
+           <%= will_paginate @articles, renderer: BootstrapPagination::Rails  %>
         </div>
       </div>
 

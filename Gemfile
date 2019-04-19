@@ -43,7 +43,9 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'devise'
 gem 'jquery-rails'
 gem 'pundit'
+gem 'sidekiq'
 gem 'news-api'
 gem 'rubocop'
 gem 'will_paginate'
+gem 'will_paginate-bootstrap'
 
