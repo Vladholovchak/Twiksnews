@@ -4,7 +4,7 @@
        <%  @articles.each do |article| %>
       <h4 class="blog-post-title">
         <%= link_to "#{article.title}", article_path(article), class: 'navbar-brand' %> </h4>
-            <p class="blog-post-meta"><%= article.published_at %> from
+            <p class="blog-post-meta"><%= article.published_at.to_s(:custom_datetime) %> from
             <a href="<%= article.url %>"> <%= article.source.name %>  </a>
             </p>
             <hr>
