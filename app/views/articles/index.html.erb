@@ -9,7 +9,8 @@
             </p>
             <hr>
             <p><%= article.description %> </p>
-            <p><%= link_to (image_tag article.url_to_image, size: '500x300') ,article_path(article)  unless article.url_to_image.blank? %> </p>
+            <p><%= link_to (image_tag article.url_to_image, size: '500x300'), article_path(article)  unless article.url_to_image.blank? %> </p>
+            <p><%= link_to ( image_tag article.image, size: '500x300'), article_path(article) if article.image.attached? %> </p>
             <% if policy(@articles).update? %>
       <%= link_to 'Edit', edit_article_path(article) %>
             <%end %>
