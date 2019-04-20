@@ -4,7 +4,8 @@
 
 <div class="col-4 d-flex justify-content-end align-items-center">
 <% if user_signed_in? %>
-       <%= link_to('Edit registration', edit_user_registration_path, class:"btn btn-sm btn-outline-secondary") %>
+
+    <%= link_to('Edit registration', edit_user_registration_path, class:"btn btn-sm btn-outline-secondary") %>
     <% if policy(User).fetch_news? %>
     <%= link_to('Update News', news_fetchers_fetch_news_path,  class:"btn btn-sm btn-outline-secondary" ) %>
     <% end %>

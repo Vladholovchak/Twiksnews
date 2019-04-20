@@ -1,9 +1,10 @@
 class ApplicationPolicy
-  attr_reader :user, :record
+  attr_reader :user, :current_user
 
-  def initialize(user, record)
+  def initialize(user, current_user)
     @user = user
-    @record = record
+    @current_user = current_user
+
   end
 
   def index?

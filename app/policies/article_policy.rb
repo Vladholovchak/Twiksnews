@@ -17,7 +17,7 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def update?
-    admin_user? or redactor_user?
+    admin_user? || redactor_user?
   end
 
   def edit?
