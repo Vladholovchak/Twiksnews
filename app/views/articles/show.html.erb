@@ -12,11 +12,9 @@
 <td><%= @article.source.name %></td>
 </p>
 <p><%= image_tag @article.url_to_image, size: '500x300' unless @article.url_to_image.blank? %> </p>
-<% if @article.image.attached? %>
   <p>
-  <%= image_tag @article.image, size: '500x300'  %>
+  <%= image_tag @article.image, size: '500x300' if @article.image.attached?  %>
   </p>
-    <%end %>
 <% if policy(@article).update? %>
 <%= link_to 'Edit', edit_article_path(@article) %>
 <%end %>
