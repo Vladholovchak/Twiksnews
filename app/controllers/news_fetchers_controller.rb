@@ -1,5 +1,5 @@
 class NewsFetchersController < ApplicationController
-
+  skip_after_action :verify_authorized, only: [:news_send]
   def fetch_news
     authorize User
     FetchArticlesService.new.create_articles
@@ -12,6 +12,15 @@ class NewsFetchersController < ApplicationController
     FetchArticlesService.new.create_sources
     redirect_to root_path
     flash[:success] = "Sources Updated!"
-end
+  end
 
+  def news_send
+    @user = current_user
+    NewsMailer.welcome_email(@user).deliver
+    redirect_to root_path
+  end
+
+  def user_params
+    params.require(@user).permit(:id)
+  end
 end

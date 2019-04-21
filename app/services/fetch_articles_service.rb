@@ -3,7 +3,7 @@
 class FetchArticlesService
 
   def call
-    @api_key = '882e10dd2b474a23bb7a3efa85e66b61'
+    @api_key = Rails.application.credentials.api_key
     @newsapi = News.new(@api_key)
     @parsed_info = @newsapi.get_everything(q: 'news', from: Time.current.day)
   end

@@ -3,9 +3,9 @@
 class Users::ConfirmationsController < Devise::ConfirmationsController
   after_action :verify_authorized, only: []
   # GET /resource/confirmation/new
-   def new
-     super
-  end
+  # def new
+  #  super
+  #end
 
   # POST /resource/confirmation
   # def create
