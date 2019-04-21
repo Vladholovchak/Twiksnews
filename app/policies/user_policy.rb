@@ -1,7 +1,7 @@
 class UserPolicy < ApplicationPolicy
 
   def index?
-    admin_user?
+    admin_user? && activated_user?
   end
 
   def show?
@@ -9,7 +9,7 @@ class UserPolicy < ApplicationPolicy
   end
 
   def create?
-    admin_user?
+    admin_user? && activated_user?
   end
 
   def new?
@@ -17,7 +17,7 @@ class UserPolicy < ApplicationPolicy
   end
 
   def update?
-    admin_user?
+    admin_user? && activated_user?
   end
 
   def edit?
@@ -25,15 +25,15 @@ class UserPolicy < ApplicationPolicy
   end
 
   def destroy?
-    admin_user?
+    admin_user? && activated_user?
   end
 
   def fetch_news?
-    true
+    activated_user?
   end
 
   def fetch_sources?
-    admin_user?
+    admin_user? && activated_user?
   end
 
 end

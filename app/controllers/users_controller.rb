@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.all
+    @users = User.all.order(email: :desc)
     authorize @users
   end
 
@@ -9,7 +9,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user_sources = Source.find(@user.source_ids)
     authorize @user
-
   end
 
   def update
@@ -25,7 +24,7 @@ class UsersController < ApplicationController
   private
 
    def user_params
-    params.require(:user).permit(:role)
+    params.require(:user).permit(:role, :status)
    end
 
 end

@@ -8,7 +8,7 @@ class ApplicationPolicy
   end
 
   def index?
-    true
+     true
   end
 
   def show?
@@ -43,6 +43,14 @@ class ApplicationPolicy
 
   def redactor_user?
     user.present? && user.redactor?
+  end
+
+  def deactivated_user?
+    user.present? && user.deactivated?
+  end
+
+  def activated_user?
+    user.present? && user.activated?
   end
 
   class Scope

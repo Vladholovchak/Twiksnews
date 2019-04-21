@@ -10,7 +10,7 @@
             <hr>
             <p><%= article.description %> </p>
             <p><%= link_to (image_tag article.url_to_image, size: '500x300'), article_path(article)  unless article.url_to_image.blank? %> </p>
-            <p><%= link_to ( image_tag article.image, size: '500x300'), article_path(article) if article.image.attached? %> </p>
+            <p><%= link_to (image_tag article.image, size: '500x300'), article_path(article) if article.image.attached? %> </p>
             <% if policy(@articles).update? %>
       <%= link_to 'Edit', edit_article_path(article) %>
             <%end %>
@@ -24,7 +24,6 @@
           <div class="page_info">
             <%= page_entries_info @articles %>
           </div>
-
            <%= will_paginate @articles, renderer: WillPaginate::ActionView::BootstrapLinkRenderer , list_classes: %w(pagination justify-content-end) %>
         </div>
       </div>

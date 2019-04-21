@@ -1,15 +1,15 @@
 class SourcePolicy < ApplicationPolicy
 
   def index?
-    admin_user?
+    admin_user? && activated_user?
   end
 
   def show?
-    admin_user?
+    index?
   end
 
   def create?
-    admin_user?
+    admin_user? && activated_user?
   end
 
   def new?
@@ -17,7 +17,7 @@ class SourcePolicy < ApplicationPolicy
   end
 
   def update?
-    admin_user?
+    admin_user? && activated_user?
   end
 
   def edit?
@@ -25,6 +25,6 @@ class SourcePolicy < ApplicationPolicy
   end
 
   def destroy?
-    admin_user?
+    admin_user? && activated_user?
   end
 end

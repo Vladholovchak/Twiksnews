@@ -1,6 +1,9 @@
 
 <%= form_with model: @user, local: true do |f| %>
-  <h4><%= f.label :email %></h4>
+  <h4><%= f.label :Status %></h4>
+  <td><%=  @user.status.to_s.capitalize %></td>
+  <p></p>
+  <h4><%= f.label :Email %></h4>
   <td><%=  @user.email %></td>
   <p></p>
   <h4><%= f.label :Your_sources %></h4>

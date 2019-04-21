@@ -2,6 +2,7 @@
 
 class User < ApplicationRecord
   enum role: [:user, :admin, :redactor]
+  enum status: [:deactivated, :activated]
 
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable, #:recoverable, :rememberable
   devise :database_authenticatable, :registerable, :validatable
