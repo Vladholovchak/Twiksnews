@@ -48,5 +48,6 @@ gem 'news-api'
 gem 'rubocop'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap4'
+gem "bootstrap_form"
 
 

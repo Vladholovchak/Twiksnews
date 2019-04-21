@@ -12,10 +12,10 @@
             <p><%= link_to (image_tag article.url_to_image, size: '500x300'), article_path(article)  unless article.url_to_image.blank? %> </p>
             <p><%= link_to (image_tag article.image, size: '500x300'), article_path(article) if article.image.attached? %> </p>
             <% if policy(@articles).update? %>
-      <%= link_to 'Edit', edit_article_path(article) %>
+      <%= link_to 'Edit', edit_article_path(article), class:"btn btn-sm btn-outline-secondary" %>
             <%end %>
               <% if policy(@articles).destroy? %>
-      <%= link_to 'Destroy', article_path(article),
+      <%= link_to 'Destroy', article_path(article),class:"btn btn-sm btn-outline-secondary",
                       method: :delete,
                       data: { confirm: 'Are you sure?' } %>
             <%end %>
@@ -26,5 +26,14 @@
           </div>
            <%= will_paginate @articles, renderer: WillPaginate::ActionView::BootstrapLinkRenderer , list_classes: %w(pagination justify-content-end) %>
         </div>
+  <aside class="col-md-4 blog-sidebar">
+
+    <% if policy(@articles).update? %>
+   <%= link_to 'New Article', new_article_path, class:"btn btn-sm btn-outline-secondary"  %>
+    <%end %>
+    <% if policy(Source).update? %>
+    <%= link_to 'Sources', sources_path, class:"btn btn-sm btn-outline-secondary"  %>
+    <%end %>
+  </aside>
       </div>
 

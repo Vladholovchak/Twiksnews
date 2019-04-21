@@ -1,7 +1,6 @@
 <h2>Sources</h2>
 <table>
   <tr>
-    <th>Id</th>
     <th>Name</th>
     <th colspan="10"></th>
     <th colspan="10"></th>
@@ -9,14 +8,14 @@
 
   <tr>
     <%  @sources.each do |source| %>
-      <td><%= source.google_id %></td>
       <td><%= source.name %></td>
-      <td><%= link_to 'Show', source_path(source) %></td>
-      <td> <%= link_to 'Edit', edit_source_path(source) %></td>
-      <td><%= link_to 'Destroy', source_path(source),
+      <td><%= link_to 'Show', source_path(source), class:"btn btn-sm btn-outline-secondary" %></td>
+      <td> <%= link_to 'Edit', edit_source_path(source), class:"btn btn-sm btn-outline-secondary" %></td>
+      <td><%= link_to 'Destroy', source_path(source), class:"btn btn-sm btn-outline-secondary",
                       method: :delete,
                       data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <%end %>
 
     </table>
+ <%= link_to 'New Source', new_source_path, class:"btn btn-sm btn-outline-secondary" %>
