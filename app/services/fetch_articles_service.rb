@@ -10,7 +10,7 @@ class FetchArticlesService
   def create_sources
     call
     @parsed_info.each do |info_fields|
-      ::Source.find_or_create_by(google_id: info_fields.id, name: info_fields.name)
+      ::Source.find_or_create_by(name: info_fields.name)
     end
   end
 

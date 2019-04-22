@@ -4,8 +4,7 @@ class User < ApplicationRecord
   enum role: %i[user admin redactor]
   enum status: %i[deactivated activated]
 
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable, #:recoverable, :rememberable
-  devise :database_authenticatable, :registerable, :validatable
+  devise :database_authenticatable, :registerable, :validatable, :confirmable, :recoverable
 
   validates :email, uniqueness: true
   validates_with EmailAddressValidator, fields: [:email]
