@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
     @articles = authorize Article.all
     @articles = current_user.articles if current_user.present? && current_user.activated?
     @articles = @articles.order(published_at: :desc)
-    @articles = @articles.paginate(:page => params[:page],:per_page => 5)
+    @articles = @articles.paginate(page: params[:page], per_page: 5)
   end
 
   def show
@@ -56,7 +56,6 @@ class ArticlesController < ApplicationController
 
   def article_params
     params.require(:article).permit(:source_id, :title, :description, :url, :url_to_image,
-    :published_at, :image)
+                   :published_at, :image)
   end
-
 end

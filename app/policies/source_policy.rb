@@ -1,5 +1,6 @@
-class SourcePolicy < ApplicationPolicy
+# frozen_string_literal: true
 
+class SourcePolicy < ApplicationPolicy
   def index?
     admin_user? && activated_user?
   end

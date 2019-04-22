@@ -1,14 +1,13 @@
 # frozen_string_literal: true
 
 class SourcesController < ApplicationController
-
   def index
     @sources = Source.all
     authorize @sources
   end
 
   def show
-    @source =  Source.find(params[:id])
+    @source = Source.find(params[:id])
     authorize @source
   end
 
@@ -18,7 +17,7 @@ class SourcesController < ApplicationController
   end
 
   def edit
-    @source =  Source.find(params[:id])
+    @source = Source.find(params[:id])
     authorize @source
   end
 
@@ -33,18 +32,17 @@ class SourcesController < ApplicationController
   end
 
   def update
-    @source =  Source.find(params[:id])
+    @source = Source.find(params[:id])
     authorize @source
     if @source.update(source_params)
       redirect_to sources_path
     else
       render 'edit'
     end
-
   end
 
   def destroy
-    @source =  Source.find(params[:id])
+    @source = Source.find(params[:id])
     authorize @source
     @source.destroy
     redirect_to sources_path

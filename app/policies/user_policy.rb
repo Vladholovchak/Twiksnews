@@ -1,5 +1,6 @@
-class UserPolicy < ApplicationPolicy
+# frozen_string_literal: true
 
+class UserPolicy < ApplicationPolicy
   def index?
     admin_user? && activated_user?
   end
@@ -35,5 +36,4 @@ class UserPolicy < ApplicationPolicy
   def fetch_sources?
     admin_user? && activated_user?
   end
-
 end

@@ -2,7 +2,7 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
   after_action :verify_authorized, only: []
-  #after_action :verify_authorized, except: [:new, :create]
+  # after_action :verify_authorized, except: [:new, :create]
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
   # GET /resource/sign_up
@@ -43,10 +43,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def update_resource(resource, params)
     # Require current password if user is trying to change password.
-    return super if params["password"]&.present?
+    return super if params['password']&.present?
 
     # Allows user to update registration information without password.
-    resource.update_without_password(params.except("current_password"))
+    resource.update_without_password(params.except('current_password'))
   end
 
   # If you have extra params to permit, append them to the sanitizer.
@@ -58,5 +58,4 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_sign_up_path_for(resource)
   #   super(resource)
   # end
-
 end
