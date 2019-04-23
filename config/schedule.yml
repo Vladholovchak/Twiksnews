@@ -1,14 +1,14 @@
-my_first_job:
-  cron: "*/1 * * * *"
-  class: "NewsMailerJob"
-  queue: default
+#personalized_newseller_job:
+ # cron: "*/1 * * * *"
+ # class: "NewsMailerJob"
+ # queue: default
 
-update_sources_job:
+upd_sources_job:
   cron: "*/3 * * * *"
-  class: "SourcesFetchJob"
+  class: "UpdateSourcesJob"
   queue: default
 
-articles_job:
+upd_articles_job:
   cron: "*/2 * * * *"
-  class: "FetcherJob"
+  class: "UpdateNewsJob"
   queue: default

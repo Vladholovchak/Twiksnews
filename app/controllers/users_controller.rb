@@ -22,10 +22,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def send_personal_news
-
-  end
-
   private
 
   def user_params

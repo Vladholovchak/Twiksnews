@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class SourcesFetchJob < ApplicationJob
+class UpdateSourcesJob < ApplicationJob
   queue_as :default
 
   discard_on ActiveJob::DeserializationError
