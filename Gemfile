@@ -37,6 +37,8 @@ group :test do
   gem 'selenium-webdriver'
 end
 
+
+
 gem "aws-sdk-s3", require: false
 gem 'bootstrap'
 gem 'bootstrap_form'
@@ -46,6 +48,8 @@ gem 'news-api'
 gem 'pundit'
 gem 'rubocop'
 gem 'sidekiq'
+gem 'sidekiq-cron'
+
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'will_paginate'
 gem 'will_paginate-bootstrap4'

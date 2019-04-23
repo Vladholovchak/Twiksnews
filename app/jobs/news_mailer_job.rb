@@ -2,7 +2,6 @@
 
 class NewsMailerJob < ApplicationJob
   queue_as :default
-
   def perform
     users = User.all.where(:send_news => true)
     users.each do |user|
@@ -11,7 +10,4 @@ class NewsMailerJob < ApplicationJob
       end
     end
   end
-
-
-
 end
