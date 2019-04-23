@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Source < ApplicationRecord::ActiveRecord::Base
+class Source < ApplicationRecord
   validates :name, uniqueness: true, presence: true
   has_many :articles, dependent: :destroy
   has_many :user_sources, dependent: :destroy
