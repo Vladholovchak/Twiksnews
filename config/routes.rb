@@ -6,7 +6,7 @@ Rails.application.routes.draw do
                                     passwords: 'users/passwords',
                                     confirmations: 'users/confirmations' }
   resources :users
-  resources :sources
+  resources :news_sources
   resources :articles
   root to: 'articles#index'
   get 'news_fetchers/fetch_news', to: 'news_fetchers#fetch_news'

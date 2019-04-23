@@ -5,6 +5,6 @@ class NewsMailer < ApplicationMailer
     @user = user
     @articles = @user.articles.published_today
     @url = 'http://localhost:3000/'
-    mail(to: @user.email, subject: 'Fresh news from your sources')
+    mail(to: @user.email, subject: 'Fresh news from your NewsSources')
   end
 end

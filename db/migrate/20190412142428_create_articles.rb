@@ -3,7 +3,7 @@
 class CreateArticles < ActiveRecord::Migration[5.2]
   def change
     create_table :articles do |t|
-      t.belongs_to :source
+      t.belongs_to :news_source
       t.string :title, null: false, default: ''
       t.string :description, null: true, default: ''
       t.string :url, null: true, default: ''

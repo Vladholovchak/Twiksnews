@@ -1,0 +1,21 @@
+<h2>News Sources</h2>
+<table>
+  <tr>
+    <th>Name</th>
+    <th colspan="10"></th>
+    <th colspan="10"></th>
+  </tr>
+
+  <tr>
+    <%  @news_sources.each do |source| %>
+      <td><%= source.name %></td>
+      <td><%= link_to 'Show', news_source_path(source), class:"btn btn-sm btn-outline-secondary" %></td>
+      <td> <%= link_to 'Edit', edit_news_source_path(source), class:"btn btn-sm btn-outline-secondary" %></td>
+      <td><%= link_to 'Destroy', news_source_path(source), class:"btn btn-sm btn-outline-secondary",
+                      method: :delete,
+                      data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <%end %>
+
+    </table>
+ <%= link_to 'New Source', new_news_source_path, class:"btn btn-sm btn-outline-secondary" %>

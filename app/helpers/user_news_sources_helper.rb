@@ -1,4 +1,4 @@
 # frozen_string_literal: true
 
-module SourcesHelper
+module UserNewsSourcesHelper
 end

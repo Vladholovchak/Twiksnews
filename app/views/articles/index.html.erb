@@ -5,7 +5,7 @@
       <h4 class="blog-post-title">
         <%= link_to "#{article.title}", article_path(article), class: 'navbar-brand' %> </h4>
             <p class="blog-post-meta"><%= article.published_at.to_s(:custom_datetime) %> from
-            <a href="<%= article.url %>"> <%= article.source.name %>  </a>
+            <a href="<%= article.url %>"> <%= article.news_source.name %>  </a>
             </p>
             <hr>
             <p><%= article.description %> </p>
@@ -31,8 +31,8 @@
     <% if policy(@articles).update? %>
    <%= link_to 'New Article', new_article_path, class:"btn btn-sm btn-outline-secondary"  %>
     <%end %>
-    <% if policy(Source).update? %>
-    <%= link_to 'Sources', sources_path, class:"btn btn-sm btn-outline-secondary"  %>
+    <% if policy(NewsSource).update? %>
+    <%= link_to 'Sources', news_sources_path, class:"btn btn-sm btn-outline-secondary"  %>
     <%end %>
   </aside>
       </div>

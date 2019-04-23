@@ -15,7 +15,7 @@
   <% end %>
 
   <p>
-    <%= form.collection_select(:source_id, Source.all, :id, :name) %>
+    <%= form.collection_select(:news_source_id, NewsSource.all, :id, :name) %>
   </p>
   <%= form.text_field :title %>
   </p>

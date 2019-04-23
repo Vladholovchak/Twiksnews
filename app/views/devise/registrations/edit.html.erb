@@ -12,7 +12,7 @@
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
   <% if policy(User).fetch_news? %>
-  <%= f.collection_check_boxes :source_ids, Source.all, :id, :name %>
+  <%= f.collection_check_boxes :news_source_ids, NewsSource.all, :id, :name %>
   <% end %>
   <div class="field">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />

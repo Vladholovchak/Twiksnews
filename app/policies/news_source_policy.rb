@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class SourcePolicy < ApplicationPolicy
+class NewsSourcePolicy < ApplicationPolicy
   def index?
     admin_user? && activated_user?
   end

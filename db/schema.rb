@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2019_04_22_215948) do
   end
 
   create_table "articles", force: :cascade do |t|
-    t.bigint "source_id"
+    t.bigint "news_source_id"
     t.string "title", default: "", null: false
     t.string "description", default: ""
     t.string "url", default: ""
@@ -45,22 +45,22 @@ ActiveRecord::Schema.define(version: 2019_04_22_215948) do
     t.datetime "published_at", default: "2019-04-13 17:48:19", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["source_id"], name: "index_articles_on_source_id"
+    t.index ["news_source_id"], name: "index_articles_on_news_source_id"
   end
 
-  create_table "sources", force: :cascade do |t|
+  create_table "news_sources", force: :cascade do |t|
     t.string "name", default: ""
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_sources", id: false, force: :cascade do |t|
+  create_table "user_news_sources", id: false, force: :cascade do |t|
     t.bigint "user_id"
-    t.bigint "source_id"
+    t.bigint "news_source_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["source_id"], name: "index_user_sources_on_source_id"
-    t.index ["user_id"], name: "index_user_sources_on_user_id"
+    t.index ["news_source_id"], name: "index_user_news_sources_on_news_source_id"
+    t.index ["user_id"], name: "index_user_news_sources_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
