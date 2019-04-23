@@ -1,14 +1,14 @@
-personalized_newseller_job:
-  cron: "*/1 * * * *"
-  class: "NewsMailerJob"
-  queue: default
-
-upd_sources_job:
-  cron: "*/3 * * * *"
-  class: "UpdateSourcesJob"
-  queue: default
-
-upd_articles_job:
-  cron: "*/2 * * * *"
-  class: "UpdateNewsJob"
-  queue: default
+#personalized_newseller_job:
+#  cron: "*/1 * * * *"
+#  class: "NewsMailerJob"
+#  queue: default
+#
+#upd_sources_job:
+#  cron: "*/3 * * * *"
+#  class: "UpdateSourcesJob"
+#  queue: default
+#
+#upd_articles_job:
+#  cron: "*/2 * * * *"
+#  class: "UpdateNewsJob"
+#  queue: default
