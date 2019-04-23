@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-class FetcherJob < ApplicationJob
+class SourcesFetchJob < ApplicationJob
   queue_as :default
 
   discard_on ActiveJob::DeserializationError
 
   def perform
-    FetchArticlesService.new.create_articles
+    FetchArticlesService.new.create_sources
   end
 end

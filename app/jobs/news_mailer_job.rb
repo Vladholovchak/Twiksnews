@@ -2,15 +2,16 @@
 
 class NewsMailerJob < ApplicationJob
   queue_as :default
-  after_perform :set_schedule
 
   def perform
-    NewsMailer.welcome_email(current_user).deliver
+    users = User.all.where(:send_news => true)
+    users.each do |user|
+      if user.articles.present?
+      NewsMailer.news_email(user).deliver
+      end
+    end
   end
 
-  private
 
-  def set_schedule
-    NewsMailer.set(wait: 1.day).perform_later
-  end
+
 end

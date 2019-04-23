@@ -33,6 +33,10 @@
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
   <p>
+    <%= f.label "Send mails" %>
+    <%= f.check_box :send_news %>
+  <p>
+  <p>
     <%= f.label "Your Photo" %>
     <%= f.file_field :avatar %>
   </p>

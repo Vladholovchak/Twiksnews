@@ -47,6 +47,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article = Article.find(params[:id])
+    @article.image.purge
     authorize @article
     @article.destroy
     redirect_to articles_path

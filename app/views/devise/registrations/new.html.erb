@@ -22,6 +22,9 @@
   </div>
   <%= f.collection_check_boxes :source_ids, Source.all, :id, :name %>
   <p>
+    <%= f.label "Send mails" %>
+    <%= f.check_box :send_news %>
+  <p>
     <%= f.label "Your Photo" %>
   <p>
     <%= f.file_field :avatar %>

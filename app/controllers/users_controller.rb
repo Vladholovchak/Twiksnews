@@ -22,9 +22,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def send_personal_news
+
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:role, :status)
+    params.require(:user).permit(:role, :status, :send_news)
   end
 end
