@@ -40,7 +40,6 @@
     <%= f.label "Choose you news sources", class: "col-sm-2 control-label" %>
     <%= f.collection_check_boxes :news_source_ids, NewsSource.all, :id, :name, class: "form-check-label" %>
     </div>
-  <% end %>
 
   <div class="form-check">
     <%= f.label "Send mails" %>
@@ -52,6 +51,7 @@
       <%= f.file_field :avatar,  class: "form-control-file" %>
     </div>
   </div>
+<% end %>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-6">
       <%= f.submit "Update", class: "btn btn-primary" %>
