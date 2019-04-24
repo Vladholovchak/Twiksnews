@@ -1,4 +1,4 @@
-  personalized_newseller_job:
+personalized_newseller_job:
   cron: "*/1 * * * *"
   class: "NewsMailerJob"
   queue: default
