@@ -12,12 +12,7 @@
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
-  <% if policy(User).fetch_news? %>
-    <div
-      <%= f.label "Choose you news sources", class: "col-sm-2 control-label" %>
-  <%= f.collection_check_boxes :news_source_ids, NewsSource.all, :id, :name, class: "form-check-label" %>
-      </div>
-  <% end %>
+
       <div class="form-group">
   <%= f.label :password, class: "col-sm-2 control-label" %> <i>(leave blank if you don't want to change it)</i>
   <div class="col-sm-6">
@@ -39,6 +34,14 @@
       <%= f.password_field :current_password, autocomplete: "current-password", class: 'form-control' %>
     </div>
   </div>
+
+  <% if policy(User).fetch_news? %>
+    <div class="form-group">
+    <%= f.label "Choose you news sources", class: "col-sm-2 control-label" %>
+    <%= f.collection_check_boxes :news_source_ids, NewsSource.all, :id, :name, class: "form-check-label" %>
+    </div>
+  <% end %>
+
   <div class="form-check">
     <%= f.label "Send mails" %>
     <%= f.check_box :send_news, class: "form-check-label"  %>
