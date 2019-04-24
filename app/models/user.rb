@@ -9,7 +9,7 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   validates_with EmailAddressValidator, fields: [:email]
 
-  has_one_attached :avatar
+  has_one_attached :avatar, dependent: :delete
   has_many :user_news_sources
   has_many :news_sources, through: :user_news_sources
   has_many :articles, through: :news_sources
