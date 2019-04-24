@@ -2,9 +2,9 @@
 
 require 'rails_helper'
 
-RSpec.describe Source, type: :model do
+RSpec.describe NewsSource, type: :model do
   before(:all) do
-    @source1 = create(:source)
+    @source1 = create(:news_source)
   end
 
   it 'is valid with valid attributes' do
@@ -12,7 +12,7 @@ RSpec.describe Source, type: :model do
   end
 
   it 'is not valid without a name' do
-    sourse2 = build(:source, name: nil)
+    sourse2 = build(:news_source, name: nil)
     expect(sourse2).to_not be_valid
   end
 

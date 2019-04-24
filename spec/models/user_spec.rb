@@ -21,10 +21,6 @@ RSpec.describe User, type: :model do
     expect(user2).to_not be_valid
   end
 
-  it 'is not valid without a first_name' do
-    user2 = build(:user, first_name: nil)
-    expect(user2).to_not be_valid
-  end
 
   it 'is not valid without an email' do
     user2 = build(:user, email: 'nil')
@@ -36,8 +32,8 @@ RSpec.describe User, type: :model do
     expect(user2).to_not be_valid
   end
 
-  it 'is not valid when using password < 8 symbols' do
-    user2 = build(:user, password: '1234567')
+  it 'is not valid when using password < 6 symbols' do
+    user2 = build(:user, password: '12345')
     expect(user2).to_not be_valid
   end
 end
