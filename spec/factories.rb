@@ -7,7 +7,7 @@ FactoryBot.define do
     end
     password { '123456' }
     role { 0 }
-    confirmed_at {Time.now}
+    confirmed_at { Time.zone.now }
   end
 
   factory :article do

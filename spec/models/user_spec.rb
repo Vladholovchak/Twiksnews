@@ -21,7 +21,6 @@ RSpec.describe User, type: :model do
     expect(user2).to_not be_valid
   end
 
-
   it 'is not valid without an email' do
     user2 = build(:user, email: 'nil')
     expect(user2).to_not be_valid
