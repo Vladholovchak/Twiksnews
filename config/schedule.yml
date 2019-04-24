@@ -4,11 +4,11 @@
   queue: default
 
 upd_sources_job:
-  cron: "0 */2 * * *"
+  cron: "*/1 * * * *"
   class: "UpdateSourcesJob"
   queue: default
 
 upd_articles_job:
-  cron: "0 */1 * * *"
+  cron: "*/1 * * * *"
   class: "UpdateNewsJob"
   queue: default
