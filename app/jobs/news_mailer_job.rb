@@ -5,7 +5,7 @@ class NewsMailerJob < ApplicationJob
   def perform
     users = User.all.where(send_news: true)
     users.each do |user|
-      if user.articles.present? && user.status.activated?
+      if user.articles.present?
         NewsMailer.news_email(user).deliver
       end
     end
