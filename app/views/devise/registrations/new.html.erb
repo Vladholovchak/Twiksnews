@@ -1,37 +1,55 @@
 <h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name,  html: {class: 'form-horizontal'}, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="form-group">
+    <%= f.label :email, class: "col-sm-2 control-label" %><br />
+    <div class="col-sm-6">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
+  <div class="form-group">
+    <%= f.label :password, class: "col-sm-2 control-label" %>
+
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <div class="col-sm-6">
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+
+    <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  <div class="form-group">
+    <%= f.label :password_confirmation,  class: "col-sm-2 control-label" %><br />
+    <div class="col-sm-6">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+    </div>
   </div>
-  <%= f.collection_check_boxes :news_source_ids, NewsSource.all, :id, :name %>
-  <p>
-    <%= f.label "Send mails" %>
-    <%= f.check_box :send_news %>
-  <p>
-    <%= f.label "Your Photo" %>
-  <p>
-    <%= f.file_field :avatar %>
-  <p>
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="form-check form-check-inline>
+    <%= f.label "Choose you news sources", class: "col-sm-2 control-label" %>
+  <%= f.collection_check_boxes :news_source_ids, NewsSource.all, :id, :name, class: "form-check-label" %>
+  </div>
+  <div class="form-check">
+  <%= f.label "Send mails"  %>
+  <%= f.check_box :send_news, class: "form-check-label" %>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-6">
+      <%= f.label "Your Photo", class: "col-sm-2 control-label"  %>
+      <%= f.file_field :avatar, class:"form-control-file"  %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-6">
+      <%= f.submit "Sign up", class: "btn btn-primary" %>
+    </div>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-6">
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
