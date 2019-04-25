@@ -14,7 +14,4 @@ class User < ApplicationRecord
   has_many :news_sources, through: :user_news_sources
   has_many :articles, through: :news_sources
 
-  def send_devise_notification(notification, *args)
-    devise_mailer.send(notification, self, *args).deliver_later
-  end
 end

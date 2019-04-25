@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @user_sources = NewsSource.find(@user.news_source_ids)
+    @user_sources = @user.sources
     authorize @user
   end
 

@@ -1,14 +1,14 @@
 personalized_newseller_job:
-  cron: "*/1 * * * *"
+  cron: "00 10 */1 * *"
   class: "NewsMailerJob"
   queue: default
 
 upd_sources_job:
-  cron: "*/1 * * * *"
+  cron: "0 */2 * * *"
   class: "UpdateSourcesJob"
   queue: default
 
 upd_articles_job:
-  cron: "*/1 * * * *"
+  cron: "0 */1 * * *"
   class: "UpdateNewsJob"
   queue: default
