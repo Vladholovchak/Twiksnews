@@ -41,6 +41,7 @@ gem 'aws-sdk-s3', require: false
 gem 'bootstrap'
 gem 'bootstrap_form'
 gem 'devise'
+gem "devise-async"
 gem 'jquery-rails'
 gem 'news-api'
 gem 'pundit'
